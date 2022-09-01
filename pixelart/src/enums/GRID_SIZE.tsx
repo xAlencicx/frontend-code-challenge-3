@@ -1,0 +1,7 @@
+enum GRID_SIZE {
+    EIGHT_BY_EIGHT = 8,
+    TWELVE_BY_TWELVE = 12,
+    SIXTEEN_BY_SIXTEEN = 16,
+    THIRTYTWO_BY_THIRYTWO = 32,
+}
+export default GRID_SIZE;
