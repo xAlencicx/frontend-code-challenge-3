@@ -1,58 +1,44 @@
-# Probeaufgabe 3 - Pixel Art
+# Task Result
 
-![Pixel Art Beispiel](pixel&#32;art&#32;demo.jpg)
+## Used technologies / Frameworks
 
-## 1. Zielsetzung
+I use the following technologies / frameworks in my project:
 
-Das Ziel ist die Implementierung einer Anwendung zur Erstellung von Pixel Arts. Die Aufgabe wird in folgendende Teil-Aufgaben/Funktionen gegliedert.
+- TypeScript / React
 
-1. Basis Grid 8x8 Rendering
-2. Möglichkeit der Farbauswahl von einer Palette
-3. Gridgröße kann gewählt werden
-   - 8x8
-   - 12x12
-   - 16x16
-   - 32x32
-4. Downloadmöglichkeit (JPG / PNG / GIF)
-5. Paint-Bucket / Fill-Tool
-   - Füllt benachbarte Pixel aus, deren Farbwert den Pixeln entspricht, auf die du klickst
+I chose React because React is easy to get setup with using create-react-app and it felt like the right tool for this particular job. Using something like Java/JavaFX
+would be overkill for a project like this. The browser can handle all criteria beautifully and when combined with TypeScript you get to enjoy the structured-ness
+of a language like Java in the browser. React with Typescript felt like the natural choice for this project.
 
-## 2. Design
 
-Die Darstellung soll **strukturiert** und **ansprechend** für Benutzer sein. Farben und Schriften können frei gewählt werden. Das Frontend soll aus nur einer Seite bestehen.
+## Used 3rd Party Libraries
 
-## 3. Implementierung
+I use the following 3rd party libraries in my project:
 
-Du hast freie Hand bei der Wahl der Technologien. Ob JavaScript, PHP, C#, Java etc. ist komplett dir überlassen. Setze ein was du am Besten beherrschst.
+Name | Reason
+--- | ---
+[tailwindcss](https://tailwindcss.com ) | I prefer tailwindcss for styling because of it's concise, expressive and powerful utility classes.
 
-Uns ist folgendes wichtig:
+Library considerations:
 
-- Warum hast du dich für diese Technologie(n) / Sprache(n) entschieden
-- Wie sicher bist du im Umgang mit den ausgewählen Sprache(n) / Technologie(n)
-- Warum hast du zum Beispiel ein bestimmtes Framework gewählt
+Name | Reason
+--- | ---
+[html2canvas](https://html2canvas.hertzen.com/ ) | I considered using html2canvas to fulfill the criteria of producing PNG, JPG or GIF images of the "pixel art" DOM-Object but I decided to avoid it because it isn't really necessary considering that we are only drawing a grid with some colored tiles. This is not very difficult to redraw using the Canvas API, which is what I decided to do instead.
 
-Wir möchten wissen, wo du stehst - welchen Kenntnisstand du hast.
 
-### 3.1 Einsatz von 3rd Party Libraries
+## Installation / Run
 
-Die Umsetzung kann mit Hilfe von **3rd Party Libraries** erfolgen. Alle verwendeten Bibliotheken (welche nicht Teil oder Dependency eines Frontend- oder Backend-Frameworks sind) müssen **referenziert** werden. Bitte begründe ebenfalls, warum du dich für genau diese eingesetzen Bibliotheken entschieden hast.
+The following components must be installed locally:
 
-### 3.2 Wartbarkeit
+- [npm](https://www.npmjs.com/) v8.18.0
+- [nodejs](https://nodejs.org/en/) v18.8.0
 
-Bei der Umsetzung ist gut strukturierter und dokumentierter Code wichtig. Die Einhaltung von gängigen **Best Practises** und **Coding-Style-Guidelines** (abhängig von der jeweils eingesetzen Sprache / Technology) sind gewünscht.
+To run the project locally, enter the following in the command line / bash:
 
-Dein Code soll gut **lesbar** und **verständlich** sein - auch für dritte. Auch der Programmablauf soll nachvollziehbar sein.
-
-Behalte im Hinterkopf, dass du und/oder andere auf dieser Code-Basis aufsetzen und das Projekt erweitern müssen.
-
-## 4. Bereitstellung
-
-Wenn du der Aufgabe fertig bist - oder nur einen Teil in der angegeben Zeit geschafft hast, kannst du uns dein Arbeitsergebnis wie folgt bereitstellen:
-
-1. Stelle uns den Link zu deinem Code-Repository zur Verfügung
-   - Falls du noch keines hast, kannst du bei den führenden Anbietern (z.B. [GitHub](https://github.com/), [GitLab](https://about.gitlab.com/), [Bitbucket](https://bitbucket.org/), [AzureDevOps](https://dev.azure.com/), ...) einen Account erstellen und dort dein Projekt bereitstellen.
-   - Bitte sorge dafür, dass die Sichtbarkeit des Repositories auf "Public" steht
-
-2. Füge eine Kopie der beiligenden Datei [Aufgabenergebnis](Aufgabenergebnis.md) hinzu und fülle alle Punkte entsprechend aus.
-
-3. Wenn du eine Demo deines Projektes bereitstellen möchtest, bietet [GitHub Pages](https://pages.github.com/) einen einfachen weg.
+```console
+$ git clone https://github.com/xAlencicx/frontend-junior-code-challenge-3.git
+$ cd frontend-junior-code-challenge-3
+$ npm install
+$ npm run start
+```
+---
