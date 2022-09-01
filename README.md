@@ -8,7 +8,7 @@ I use the following technologies / frameworks in my project:
 
 - TypeScript / React
 
-I chose React because React is easy to get setup with using create-react-app and it felt like the right tool for this particular job. Using something like Java/JavaFX
+I chose React because React is easy to get setup with using create-react-app and it felt like the right tool for this particular job. Using something like Java/JavaFX/C#
 would be overkill for a project like this. The browser can handle all criteria beautifully and when combined with TypeScript you get to enjoy the structured-ness
 of a language like Java in the browser. React with Typescript felt like the natural choice for this project.
 
@@ -38,9 +38,9 @@ The following components must be installed locally:
 To run the project locally, enter the following in the command line / bash:
 
 ```console
-$ git clone https://github.com/xAlencicx/frontend-junior-code-challenge-3.git
-$ cd frontend-junior-code-challenge-3/pixelart
-$ npm install
-$ npm run start
+git clone https://github.com/xAlencicx/frontend-junior-code-challenge-3.git
+cd frontend-junior-code-challenge-3/pixelart
+npm install
+npm run start
 ```
 ---
