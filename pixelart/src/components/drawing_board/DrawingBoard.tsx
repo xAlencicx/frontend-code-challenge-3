@@ -1,11 +1,9 @@
 import React, { useCallback, useLayoutEffect, useState } from 'react'
-import DIRECTION from '../../enums/DIRECTION';
 import EXPORT_AS from '../../enums/EXPORT_AS';
 import GRID_SIZE from '../../enums/GRID_SIZE';
 import RESOLUTION from '../../enums/RESOLUTION';
 import FillToolSetting from '../../models/FillToolSetting';
 import { TileInfo } from '../../types/TileInfo';
-import { ToolbarItem } from '../../types/ToolbarItem';
 import Column from '../layout/Column';
 import Toolbar from '../toolbar/Toolbar';
 import Grid from '../layout/Grid';
@@ -21,20 +19,20 @@ import FILL_TOOL from '../../enums/FILL_TOOL';
 
 // 1. Base grid 8x8 rendering √
 // 2. Possibility of choosing colors from a palette √
-// 3. Grid size can be chosen
+// 3. Grid size can be chosen √
 //    - 8x8 √
 //    - 12x12 √ 
 //    - 16x16 √
 //    - 32x32 √
-// 4. Download option (JPG / PNG / GIF)
-// 5. Paint bucket / fill tool
+// 4. Download option (JPG / PNG / GIF) √
+// 5. Paint bucket / fill tool √
 //    - Fills in neighboring pixels whose color value corresponds to the pixels you click on √
 
 
 const DrawingBoard = () => {
 
   //grid will orient itself on this size. tiles will be this size / tile count
-  const size = (Math.max(window.innerWidth / 2, window.innerHeight) / 2);
+  const size =  window.innerWidth > 420 ? (Math.max(window.innerWidth/ 1.8, window.innerHeight) / 1.8) : (Math.max(window.innerWidth / 2.5, window.innerHeight) / 2.5);
 
   //tiles to render on the grid
   const [tiles, setTiles] = React.useState<TileInfo[]>([]);
@@ -45,7 +43,7 @@ const DrawingBoard = () => {
   const { initGridSizeToolbarItems, initFillToolToolbarItems, initColorToolbarItems } = useToolbar();
   const [resolutionSetting, setResolutionSetting] = useState<RESOLUTION>(RESOLUTION.DPI_150);
 
-  //initialize new filltool which will handle the fill tool logic such as bucket fill, finding neighboring tiles
+  //filltool which will handle the fill tool logic such as bucket fill, finding neighboring tiles
   const { fillTool } = useFillTool(tiles, setTiles);
 
   const { initResolutionToolbarItems, initExportToolbarItems } = useToolbar();
@@ -108,7 +106,7 @@ const DrawingBoard = () => {
 
       <Row>
         <Toolbar title={"Output Resolution [DPI]"} toolbarItems={initResolutionToolbarItems(resolutionSetting, setResolutionSetting)} />
-        <Toolbar title={"Export"} toolbarItems={initExportToolbarItems(onExportClicked)} />
+        <Toolbar title={"Click to export"} toolbarItems={initExportToolbarItems(onExportClicked)} />
       </Row>
     </Column>
   )
