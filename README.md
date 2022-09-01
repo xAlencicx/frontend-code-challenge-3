@@ -1,5 +1,7 @@
 # Task Result
 
+![Pixel Art Result](pixel-art-demo.png)
+
 ## Used technologies / Frameworks
 
 I use the following technologies / frameworks in my project:
