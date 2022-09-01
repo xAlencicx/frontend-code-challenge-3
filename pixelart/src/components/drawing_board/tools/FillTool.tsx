@@ -54,14 +54,14 @@ export default class FillTool {
 
 
     const neighboringTiles: TileInfo[] = []
-    const leftTile = this.tiles.find(t => t.x === tileInfo.x - 1 && t.y === tileInfo.y);
-    const rightTile = this.tiles.find(t => t.x === tileInfo.x + 1 && t.y === tileInfo.y);
-    const topTile = this.tiles.find(t => t.x === tileInfo.x && t.y === tileInfo.y - 1);
-    const bottomTile = this.tiles.find(t => t.x === tileInfo.x && t.y === tileInfo.y + 1);
-    const topLeftTile = this.tiles.find(t => t.x === tileInfo.x - 1 && t.y === tileInfo.y - 1);
-    const topRightTile = this.tiles.find(t => t.x === tileInfo.x + 1 && t.y === tileInfo.y - 1);
-    const bottomLeftTile = this.tiles.find(t => t.x === tileInfo.x - 1 && t.y === tileInfo.y + 1);
-    const bottomRightTile = this.tiles.find(t => t.x === tileInfo.x + 1 && t.y === tileInfo.y + 1);
+    const leftTile = this.tiles.find(t => t.column === tileInfo.column - 1 && t.row === tileInfo.row);
+    const rightTile = this.tiles.find(t => t.column === tileInfo.column + 1 && t.row === tileInfo.row);
+    const topTile = this.tiles.find(t => t.column === tileInfo.column && t.row === tileInfo.row - 1);
+    const bottomTile = this.tiles.find(t => t.column === tileInfo.column && t.row === tileInfo.row + 1);
+    const topLeftTile = this.tiles.find(t => t.column === tileInfo.column - 1 && t.row === tileInfo.row - 1);
+    const topRightTile = this.tiles.find(t => t.column === tileInfo.column + 1 && t.row === tileInfo.row - 1);
+    const bottomLeftTile = this.tiles.find(t => t.column === tileInfo.column - 1 && t.row === tileInfo.row + 1);
+    const bottomRightTile = this.tiles.find(t => t.column === tileInfo.column + 1 && t.row === tileInfo.row + 1);
 
     if (leftTile !== undefined && tileInfo.color == leftTile.color && !tilesCache.some(t => t.index === leftTile.index)) neighboringTiles.push(leftTile);
     if (rightTile !== undefined && tileInfo.color == rightTile.color && !tilesCache.some(t => t.index === rightTile.index)) neighboringTiles.push(rightTile);
