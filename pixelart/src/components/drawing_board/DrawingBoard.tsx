@@ -56,8 +56,10 @@ const DrawingBoard = () => {
       const tileSize = size / gridSizeSetting
       const tileInfo = {
         index: i,
-        x: i % gridSizeSetting * tileSize,
-        y: Math.floor(i / gridSizeSetting) * tileSize,
+        x: i % gridSizeSetting,
+        y: Math.floor(i / gridSizeSetting),
+        column: i % gridSizeSetting * tileSize,
+        row: Math.floor(i / gridSizeSetting) * tileSize,
         width: tileSize,
         height: tileSize,
         color: "white",

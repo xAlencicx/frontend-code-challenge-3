@@ -39,27 +39,29 @@ export default class FillTool {
 
 
     this.onTilesFilledCallback([...this.tiles]);
-    // console.log("filled %i tiles",tilesToFill.length);
+     
   }
 
   private updateTileColor(tilesToUpdate: TileInfo[], color: string) {
     tilesToUpdate.forEach(tileInfo => {
       this.tiles[tileInfo.index] = { ...tileInfo, color: color }
     })
+
+    console.log("filled %i tiles",tilesToUpdate.length);
   }
 
   private findNeighboringTiles(tileInfo: TileInfo, tilesCache: TileInfo[]): TileInfo[] {
 
 
     const neighboringTiles: TileInfo[] = []
-    const leftTile = this.tiles.find(t => t.x === tileInfo.x - tileInfo.width && t.y === tileInfo.y);
-    const rightTile = this.tiles.find(t => t.x === tileInfo.x + tileInfo.width && t.y === tileInfo.y);
-    const topTile = this.tiles.find(t => t.x === tileInfo.x && t.y === tileInfo.y - tileInfo.height);
-    const bottomTile = this.tiles.find(t => t.x === tileInfo.x && t.y === tileInfo.y + tileInfo.height);
-    const topLeftTile = this.tiles.find(t => t.x === tileInfo.x - tileInfo.width && t.y === tileInfo.y - tileInfo.height);
-    const topRightTile = this.tiles.find(t => t.x === tileInfo.x + tileInfo.width && t.y === tileInfo.y - tileInfo.height);
-    const bottomLeftTile = this.tiles.find(t => t.x === tileInfo.x - tileInfo.width && t.y === tileInfo.y + tileInfo.height);
-    const bottomRightTile = this.tiles.find(t => t.x === tileInfo.x + tileInfo.width && t.y === tileInfo.y + tileInfo.height);
+    const leftTile = this.tiles.find(t => t.x === tileInfo.x - 1 && t.y === tileInfo.y);
+    const rightTile = this.tiles.find(t => t.x === tileInfo.x + 1 && t.y === tileInfo.y);
+    const topTile = this.tiles.find(t => t.x === tileInfo.x && t.y === tileInfo.y - 1);
+    const bottomTile = this.tiles.find(t => t.x === tileInfo.x && t.y === tileInfo.y + 1);
+    const topLeftTile = this.tiles.find(t => t.x === tileInfo.x - 1 && t.y === tileInfo.y - 1);
+    const topRightTile = this.tiles.find(t => t.x === tileInfo.x + 1 && t.y === tileInfo.y - 1);
+    const bottomLeftTile = this.tiles.find(t => t.x === tileInfo.x - 1 && t.y === tileInfo.y + 1);
+    const bottomRightTile = this.tiles.find(t => t.x === tileInfo.x + 1 && t.y === tileInfo.y + 1);
 
     if (leftTile !== undefined && tileInfo.color == leftTile.color && !tilesCache.some(t => t.index === leftTile.index)) neighboringTiles.push(leftTile);
     if (rightTile !== undefined && tileInfo.color == rightTile.color && !tilesCache.some(t => t.index === rightTile.index)) neighboringTiles.push(rightTile);
