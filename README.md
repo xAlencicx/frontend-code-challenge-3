@@ -39,7 +39,7 @@ To run the project locally, enter the following in the command line / bash:
 
 ```console
 $ git clone https://github.com/xAlencicx/frontend-junior-code-challenge-3.git
-$ cd frontend-junior-code-challenge-3
+$ cd frontend-junior-code-challenge-3/pixelart
 $ npm install
 $ npm run start
 ```
