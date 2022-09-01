@@ -33,7 +33,7 @@ Name | Reason
 The following components must be installed locally:
 
 - [npm](https://www.npmjs.com/) v8.18.0
-- [nodejs](https://nodejs.org/en/) v18.8.0
+- [nodejs](https://nodejs.org/en/) >= v16.13.0
 
 To run the project locally, enter the following in the command line / bash:
 
